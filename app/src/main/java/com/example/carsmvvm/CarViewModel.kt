@@ -16,7 +16,7 @@ class CarViewModel : ViewModel() {
     }
 
     private fun loadCars() {
-        //car list
+        // Create simple car list
         val carsList = listOf(
             Car(1, "Model S Plaid", "Tesla", "$129,990", R.drawable.car1, true),
             Car(2, "Taycan Turbo", "Porsche", "$189,900", R.drawable.car2, true),
@@ -29,4 +29,9 @@ class CarViewModel : ViewModel() {
         _cars.value = carsList
     }
 
+    // Simple function to add a car
+    fun addCar(car: Car) {
+        val current = _cars.value ?: emptyList()
+        _cars.value = current + car
+    }
 }
