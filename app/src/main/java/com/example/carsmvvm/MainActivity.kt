@@ -34,11 +34,6 @@ class MainActivity : AppCompatActivity() {
     private fun setupViewModel() {
         carViewModel = ViewModelProvider(this)[CarViewModel::class.java]
 
-        // Watch for car data changes
-        carViewModel.cars.observe(this) { cars ->
-            carAdapter.updateCars(cars)
-            updateCarCount(cars.size)
-        }
     }
 
     private fun setupButton() {
@@ -52,11 +47,9 @@ class MainActivity : AppCompatActivity() {
                 image = R.drawable.car1,
                 isElectric = true
             )
-            carViewModel.addCar(newCar)
+
         }
     }
 
-    private fun updateCarCount(count: Int) {
-        findViewById<android.widget.TextView>(R.id.carCount).text = "$count cars"
-    }
+
 }
