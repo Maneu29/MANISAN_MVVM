@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Simple but futuristic colors -->
-    <color name="black">#0A0A0F</color>
-    <color name="dark_gray">#1A1A2E</color>
-    <color name="neon_blue">#00D4FF</color>
-    <color name="white">#FFFFFF</color>
-    <color name="light_gray">#CCCCCC</color>
-</resources>
