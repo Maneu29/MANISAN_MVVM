@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
 
         setupRecyclerView()
         setupViewModel()
-        setupButton()
     }
 
     private fun setupRecyclerView() {
@@ -34,22 +33,14 @@ class MainActivity : AppCompatActivity() {
     private fun setupViewModel() {
         carViewModel = ViewModelProvider(this)[CarViewModel::class.java]
 
-    }
-
-    private fun setupButton() {
-        findViewById<com.google.android.material.button.MaterialButton>(R.id.addButton).setOnClickListener {
-            // Add a test car
-            val newCar = Car(
-                id = 7,
-                name = "Test Car",
-                brand = "Brand X",
-                price = "$99,999",
-                image = R.drawable.car1,
-                isElectric = true
-            )
-
+        // Watch for car data changes
+        carViewModel.cars.observe(this) { cars ->
+            carAdapter.updateCars(cars)
+            updateCarCount(cars.size)
         }
     }
 
-
+    private fun updateCarCount(count: Int) {
+        findViewById<android.widget.TextView>(R.id.carCount).text = getString(R.string.car_count, count)
+    }
 }

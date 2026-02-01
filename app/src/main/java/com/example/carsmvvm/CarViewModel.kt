@@ -28,5 +28,4 @@ class CarViewModel : ViewModel() {
 
         _cars.value = carsList
     }
-
 }

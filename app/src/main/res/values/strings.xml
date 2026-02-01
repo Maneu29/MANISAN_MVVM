@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CarsMVVM</string>
+    <string name="car_count">%d cars</string>
+</resources>
